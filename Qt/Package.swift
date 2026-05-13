@@ -62,7 +62,7 @@ let package = Package(
             path: "lib",
             exclude: ["Frameworks"],
             sources: ["_spmQtCorePrivate.cpp"],
-            publicHeadersPath: "Frameworks/QtCore.xcframework/macos-arm64/QtCore.framework/Headers/6.10.0"
+            publicHeadersPath: "Frameworks/QtCore.xcframework/macos-arm64/QtCore.framework/Headers/6.11.1"
         ),
         .target(
             name: "QtCorePrivateWithoutPrefix",
@@ -70,7 +70,7 @@ let package = Package(
             path: "lib",
             exclude: ["Frameworks"],
             sources: ["_spmQtCorePrivateWithoutPrefix.cpp"],
-            publicHeadersPath: "Frameworks/QtCore.xcframework/macos-arm64/QtCore.framework/Headers/6.10.0/QtCore"
+            publicHeadersPath: "Frameworks/QtCore.xcframework/macos-arm64/QtCore.framework/Headers/6.11.1/QtCore"
         ),
         .target(
             name: "QtQml",
@@ -131,6 +131,14 @@ let package = Package(
             path: "lib/Frameworks/QtLabsSharedImage.xcframework"
         ),
         .binaryTarget(
+            name: "QtLabsStyleKitBinary",
+            path: "lib/Frameworks/QtLabsStyleKit.xcframework"
+        ),
+        .binaryTarget(
+            name: "QtLabsStyleKitImplBinary",
+            path: "lib/Frameworks/QtLabsStyleKitImpl.xcframework"
+        ),
+        .binaryTarget(
             name: "QtLabsSynchronizerBinary",
             path: "lib/Frameworks/QtLabsSynchronizer.xcframework"
         ),
@@ -139,16 +147,12 @@ let package = Package(
             path: "lib/Frameworks/QtLabsWavefrontMesh.xcframework"
         ),
         .binaryTarget(
+            name: "QtNetworkBinary",
+            path: "lib/Frameworks/QtNetwork.xcframework"
+        ),
+        .binaryTarget(
             name: "QtOpenGLBinary",
             path: "lib/Frameworks/QtOpenGL.xcframework"
-        ),
-        .binaryTarget(
-            name: "QtOpenGLWidgetsBinary",
-            path: "lib/Frameworks/QtOpenGLWidgets.xcframework"
-        ),
-        .binaryTarget(
-            name: "QtPrintSupportBinary",
-            path: "lib/Frameworks/QtPrintSupport.xcframework"
         ),
         .binaryTarget(
             name: "QtQmlBinary",
@@ -169,6 +173,10 @@ let package = Package(
         .binaryTarget(
             name: "QtQmlModelsBinary",
             path: "lib/Frameworks/QtQmlModels.xcframework"
+        ),
+        .binaryTarget(
+            name: "QtQmlNetworkBinary",
+            path: "lib/Frameworks/QtQmlNetwork.xcframework"
         ),
         .binaryTarget(
             name: "QtQmlWorkerScriptBinary",
@@ -291,24 +299,12 @@ let package = Package(
             path: "lib/Frameworks/QtQuickVectorImageHelpers.xcframework"
         ),
         .binaryTarget(
-            name: "QtQuickWidgetsBinary",
-            path: "lib/Frameworks/QtQuickWidgets.xcframework"
-        ),
-        .binaryTarget(
             name: "QtShaderToolsBinary",
             path: "lib/Frameworks/QtShaderTools.xcframework"
         ),
         .binaryTarget(
             name: "QtSvgBinary",
             path: "lib/Frameworks/QtSvg.xcframework"
-        ),
-        .binaryTarget(
-            name: "QtSvgWidgetsBinary",
-            path: "lib/Frameworks/QtSvgWidgets.xcframework"
-        ),
-        .binaryTarget(
-            name: "QtWidgetsBinary",
-            path: "lib/Frameworks/QtWidgets.xcframework"
         ),
         .binaryTarget(
             name: "QtXmlBinary",
@@ -326,16 +322,18 @@ let package = Package(
                 "QtLabsQmlModelsBinary",
                 "QtLabsSettingsBinary",
                 "QtLabsSharedImageBinary",
+                "QtLabsStyleKitBinary",
+                "QtLabsStyleKitImplBinary",
                 "QtLabsSynchronizerBinary",
                 "QtLabsWavefrontMeshBinary",
+                "QtNetworkBinary",
                 "QtOpenGLBinary",
-                "QtOpenGLWidgetsBinary",
-                "QtPrintSupportBinary",
                 "QtQmlBinary",
                 "QtQmlCompilerBinary",
                 "QtQmlCoreBinary",
                 "QtQmlMetaBinary",
                 "QtQmlModelsBinary",
+                "QtQmlNetworkBinary",
                 "QtQmlWorkerScriptBinary",
                 "QtQmlXmlListModelBinary",
                 "QtQuickBinary",
@@ -367,12 +365,9 @@ let package = Package(
                 "QtQuickVectorImageBinary",
                 "QtQuickVectorImageGeneratorBinary",
                 "QtQuickVectorImageHelpersBinary",
-                "QtQuickWidgetsBinary",
                 "QtShaderToolsBinary",
                 "QtSvgBinary",
-                "QtSvgWidgetsBinary",
                 "QtTestBinary",
-                "QtWidgetsBinary",
                 "QtXmlBinary"
             ],
             path: "./",
